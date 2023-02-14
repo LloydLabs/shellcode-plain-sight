@@ -1,6 +1,6 @@
 # Hiding Shellcode In Plain Sight
 This technique is very simple, a RW memory region 2048 the size of the shellcode is allocated. This region is then filled with randomized data data (`RtlGenRandom`), the shellcode is then placed **randomly** somewhere within this massive region each time. This makes it hard for an AV/EDR solution, or an analyst, to simply see where the shellcode is in-memory. To summarize:
-1. Allocate a large `PAGE_READWRITE` region, 2048 the size of the target shellcode, and align to `0x1000`
+1. Allocate a large `PAGE_READWRITE` region, `2048 * size` of the target shellcode, and align to `0x1000`
 2. Fill this allocated region with random data
 3. Write the shellcode to a random location within this region, save position
 4. Change the page permissions to `PAGE_EXECUTE`
