@@ -7,3 +7,5 @@ This technique is very simple, a RW memory region 2048 the size of the shellcode
 5. Execute the shellcode (page + position)
 6. Zero the memory where the entire large region is to ensure the data does not persist after being freed, using the `RtlZeroMemory` macro
 7. Free the region of memory
+
+You can execute the shellcode however you wish. This code is simply to demonstrate the simple technique.
