@@ -9,7 +9,7 @@ This technique is very simple, a RW memory region 2048 the size of the shellcode
 7. Free the region of memory
 
 # Example
-As can be seen below, the entropy does not change much at all. It is not obvious, from e.g. a memory dump, where the shellcode is actually situated. This can be seen inside `example_pop_calc.c`.
+As can be seen below, the entropy does not change much at all. It is not obvious, from e.g. a memory dump, where the shellcode is actually situated. This can be seen inside `example_pop_calc.c`
 
 ![Memory dump entropy](https://i.imgur.com/96ixWdw.png)
 
