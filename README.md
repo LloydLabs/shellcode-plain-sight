@@ -9,6 +9,7 @@ This technique is very simple, a RW memory region 2048 the size of the shellcode
 7. Free the region of memory
 
 As can be seen below, the entropy does not change much at all. It is not obvious, from e.g. a memory dump, where the shellcode is actually situated.
+
 ![Memory dump entropy](https://i.imgur.com/96ixWdw.png)
 
 You can execute the shellcode however you wish. This code is simply to demonstrate the simple technique.
