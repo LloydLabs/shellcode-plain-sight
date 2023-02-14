@@ -8,7 +8,8 @@ This technique is very simple, a RW memory region 2048 the size of the shellcode
 6. Zero the memory where the entire large region is to ensure the data does not persist after being freed, using the `RtlZeroMemory` macro
 7. Free the region of memory
 
-As can be seen below, the entropy does not change much at all. It is not obvious, from e.g. a memory dump, where the shellcode is actually situated.
+# Example
+As can be seen below, the entropy does not change much at all. It is not obvious, from e.g. a memory dump, where the shellcode is actually situated. This can be seen inside `example_pop_calc.c`.
 
 ![Memory dump entropy](https://i.imgur.com/96ixWdw.png)
 
