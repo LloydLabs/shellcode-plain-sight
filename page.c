@@ -5,7 +5,8 @@
 #ifdef _DEBUG
 #include <stdio.h>
 
-VOID dump_ctx_struct(
+VOID
+dump_ctx_struct(
 	PPAGE_SHELLCODE_CONTEXT pCtx
 )
 {
@@ -22,7 +23,8 @@ VOID dump_ctx_struct(
 }
 #endif
 
-PPAGE_SHELLCODE_CONTEXT allocate_large_page(
+PPAGE_SHELLCODE_CONTEXT
+allocate_large_page(
 	HANDLE hTarget,
 	DWORD cbPageSize
 )
@@ -41,7 +43,8 @@ PPAGE_SHELLCODE_CONTEXT allocate_large_page(
 	return pCtx;
 }
 
-VOID destroy_context(
+VOID
+destroy_context(
 	PPAGE_SHELLCODE_CONTEXT pCtx
 )
 {
@@ -49,7 +52,8 @@ VOID destroy_context(
 		HeapFree(GetProcessHeap(), HEAP_ZERO_MEMORY, (LPVOID)pCtx);
 }
 
-VOID encode_shellcode_content(
+VOID
+encode_shellcode_content(
 	PPAGE_SHELLCODE_CONTEXT pCtx,
 	PBYTE pbBuffer,
 	SIZE_T cbBuffer,
@@ -65,7 +69,8 @@ VOID encode_shellcode_content(
 	}
 }
 
-VOID place_shellcode_rand(
+VOID
+place_shellcode_rand(
 	PPAGE_SHELLCODE_CONTEXT pCtx,
 	PBYTE pbBuffer,
 	SIZE_T cbBuffer
@@ -74,7 +79,8 @@ VOID place_shellcode_rand(
 	RtlCopyMemory((PBYTE)pCtx->lpPage + pCtx->dwLocation, pbBuffer, cbBuffer);
 }
 
-VOID execute_shellcode(
+VOID
+execute_shellcode(
 	PPAGE_SHELLCODE_CONTEXT pCtx
 )
 {
