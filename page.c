@@ -48,7 +48,7 @@ destroy_context(
 	PPAGE_SHELLCODE_CONTEXT pCtx
 )
 {
-	if (pCtx == NULL)
+	if (pCtx != NULL)
 		HeapFree(GetProcessHeap(), HEAP_ZERO_MEMORY, (LPVOID)pCtx);
 }
 
