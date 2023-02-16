@@ -1,5 +1,4 @@
 #include "page.h"
-
 #include <ntsecapi.h>
 
 #ifdef _DEBUG
