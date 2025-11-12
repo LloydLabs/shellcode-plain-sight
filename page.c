@@ -30,7 +30,9 @@ allocate_large_page(
 {
 	PPAGE_SHELLCODE_CONTEXT pCtx = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(PAGE_SHELLCODE_CONTEXT));
 	if (pCtx == NULL)
+	{
 		return NULL;
+	}
 
 	pCtx->uSize = ALIGN_PAGE(cbPageSize * FACTOR);
 	if ((pCtx->lpPage = VirtualAlloc(hTarget, pCtx->uSize, MEM_COMMIT, PAGE_READWRITE)) != NULL)
@@ -48,7 +50,9 @@ destroy_context(
 )
 {
 	if (pCtx != NULL)
+	{
 		HeapFree(GetProcessHeap(), HEAP_ZERO_MEMORY, (LPVOID)pCtx);
+	}
 }
 
 VOID
